@@ -117,7 +117,7 @@ GenerateClassCluster=0
 DocumentUniqueId=AWAUIXGW
 
 [Document5]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0003 - Capacitors SMD\Capacitors SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0003 - Capacitors SMD\Capacitors SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -131,10 +131,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JWVGKFCB
+DocumentUniqueId=
 
 [Document6]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0003 - Capacitors SMD\Capacitors SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0003 - Capacitors SMD\Capacitors SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -151,7 +151,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0002 - Resistors SMD\Resistors SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0002 - Resistors SMD\Resistors SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -168,7 +168,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document8]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0002 - Resistors SMD\Resistors SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0002 - Resistors SMD\Resistors SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -185,7 +185,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document9]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0018 - Comparators Chip SMD\Comparators Chip SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0018 - Comparators Chip SMD\Comparators Chip SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -202,7 +202,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document10]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0018 - Comparators Chip SMD\Comparators Chip SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0018 - Comparators Chip SMD\Comparators Chip SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -219,7 +219,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document11]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0019 - Potentiometer SMD\Potentiometer SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0019 - Potentiometer SMD\Potentiometer SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -233,10 +233,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JPJVYWMC
+DocumentUniqueId=
 
 [Document12]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0019 - Potentiometer SMD\Potentiometer SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0019 - Potentiometer SMD\Potentiometer SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -250,10 +250,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=DBIWPYBF
+DocumentUniqueId=
 
 [Document13]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0009 - Mosfets SMD\Mosfet SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0009 - Mosfets SMD\Mosfet SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -267,10 +267,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=KUQEONFC
+DocumentUniqueId=
 
 [Document14]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0009 - Mosfets SMD\Mosfet SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0009 - Mosfets SMD\Mosfet SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -284,7 +284,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=LJXPZOGD
+DocumentUniqueId=
 
 [Document15]
 DocumentPath=Pre-Charge Detector.SchDoc
@@ -304,7 +304,7 @@ GenerateClassCluster=0
 DocumentUniqueId=JQVZJNGY
 
 [Document16]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0010 - Leds SMD\LEDs SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0010 - Leds SMD\LEDs SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -321,7 +321,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document17]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0010 - Leds SMD\LEDs SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0010 - Leds SMD\LEDs SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -355,7 +355,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DXNYHMFO
 
 [Document19]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0013 - Optocoupler SMD\Optocoupler SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0013 - Optocoupler SMD\Optocoupler SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -372,7 +372,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document20]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0013 - Optocoupler SMD\Optocoupler SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0013 - Optocoupler SMD\Optocoupler SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -406,7 +406,7 @@ GenerateClassCluster=0
 DocumentUniqueId=BGULTYER
 
 [Document22]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0016 - Connectors\Connectors Through Hole.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0016 - Connectors\Connectors Through Hole.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -420,10 +420,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=EDPXOOAS
+DocumentUniqueId=
 
 [Document23]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0016 - Connectors\Connectors Through Hole.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0016 - Connectors\Connectors Through Hole.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -437,10 +437,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=DHNVMILY
+DocumentUniqueId=
 
 [Document24]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0006 - Inductors SMD\Inductors SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0006 - Inductors SMD\Inductors SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -454,10 +454,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=HNMSBKOB
+DocumentUniqueId=
 
 [Document25]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0006 - Inductors SMD\Inductors SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0006 - Inductors SMD\Inductors SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -471,10 +471,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=KVANQVPJ
+DocumentUniqueId=
 
 [Document26]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0007 - Diodes SMD\Diodes SMD.PcbLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0007 - Diodes SMD\Diodes SMD.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -488,10 +488,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=ESEQDPKY
+DocumentUniqueId=
 
 [Document27]
-DocumentPath=..\..\..\..\..\..\OneDrive\05_STASH\01_Eletronica\001_AltiumLibs\0007 - Diodes SMD\Diodes SMD.SchLib
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0007 - Diodes SMD\Diodes SMD.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -505,7 +505,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=OHAOVAXR
+DocumentUniqueId=
 
 [Document28]
 DocumentPath=CAMtastic1.Cam
@@ -1419,21 +1419,6 @@ Type118=1
 Type119=1
 Type120=1
 Type121=1
-Type122=1
-Type123=1
-Type124=1
-Type125=1
-Type126=1
-Type127=1
-Type128=1
-Type129=1
-Type130=1
-Type131=1
-Type132=1
-Type133=1
-Type134=1
-Type135=1
-Type136=1
 
 [Difference Levels]
 Type1=1
@@ -1505,11 +1490,6 @@ Type66=1
 Type67=1
 Type68=1
 Type69=1
-Type70=1
-Type71=1
-Type72=1
-Type73=1
-Type74=1
 
 [Electrical Rules Check]
 Type1=1
@@ -1631,7 +1611,6 @@ Type116=2
 Type117=3
 Type118=3
 Type119=3
-MultiChannelAlternate=0
 AlternateItemFail=3
 Type122=2
 Type123=1
