@@ -1,0 +1,18 @@
+Added Component: Designator=Q1(DPAK - MOSFET)
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "785-1002-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.ca/product-detail/en/alpha-omega-semiconductor-inc/AO3402/785-1002-1-ND/1855944?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Alpha &"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AO3402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT-23 Alpha &amp; Omega Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/AO3402/Alpha%20&%20Omega%20Semiconductor%20Inc./view-part/564857/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_2 Pin=Q1-3
+Added Pin To Net: NetName=NetQ1_1 Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_1 Pin=U1-19
+Added Net: Name=NetQ1_1
+Added Pin To Net: NetName=NetQ1_2 Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_2 Pin=R1-2
+Added Pin To Net: NetName=NetQ1_2 Pin=U1-18
+Added Net: Name=NetQ1_2
+Added Member To Class: ClassName=Buck Member=Component Q1 N-MOS
+Added Member To Class: ClassName=60V_Detector Member=Component Q N-MOS

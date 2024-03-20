@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=NetC2_2 Pin=R16-2
+Removed Pin From Net: NetName=GND Pin=R20-2
+Removed Member From Class: ClassName=Pre-Charge Detector Member=R16
+Removed Member From Class: ClassName=Pre-Charge Detector Member=R17
+Removed Member From Class: ClassName=Pre-Charge Detector Member=R18
+Removed Member From Class: ClassName=Pre-Charge Detector Member=R19
+Removed Member From Class: ClassName=Pre-Charge Detector Member=R20
+Added Pin To Net: NetName=NetC10_2 Pin=C13-2
+Added Pin To Net: NetName=NetC10_2 Pin=U3-3

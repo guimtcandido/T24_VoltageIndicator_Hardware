@@ -1,0 +1,616 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">15/02/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:59:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc" class="file"><acronym title="C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc">C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">92</td></tr>
+</table>
+</td>
+</table><a name="IDGXFFKDLMAFFR4S1TA15AFMMXEFWXYXK1PESUJJXHSL1TRJZII2"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN1JWUYGOODFONDL5HPKP33E00GLPUF5X3VQTI1OTXOALBLKSWWVK">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">41</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDR3H01BUSQ0UDNFDFWCZSOJNAGJZ00GHJODLIXECCNIWTKDKY3GFC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHUKIGXASP4XVFO54L0HQHTRWKMTWY4HKX5E5RDHX0GDQEBOY3BTB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGNXCL1ALVS4HCP0TTDWUTM525P0DRNEBAZ54GDPORBIOYYLX4PC">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPTWNNO3QVSNAITPVOPDJMLSSKCDMG1RY4P0WYICSTQJUZOZZN55M">Width Constraint (Min=0.13mm) (Max=0.5mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWZ0QZDFN3NWAJZUSD3MQQPWI2PVA1B3TENEXUIGE1AWVHT0WLMTG">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRHNU4GAFE3DKE4YUQFNSG2L5DL2L12WEWHQFNDFON2I4Q34YU0MC">Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH1R3L5ZZQTUP225KLZ3BYENXPTMVXSPFAHMXXH3FM5VVFI0T4FK">Hole To Hole Clearance (Gap=0.5mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUDA4EUCPVVP3FK4F2A5SG2RTBNQ4K5K1VOX0XVGGDW3SZAAMUEOD">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIL5LC0VWSZVDGGXHZBYGFGHBOTRU2IK2C0LMWFRSXRWAM0R5Q4M">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDE40OVQ1OVGJFGWFMCHAND4DONGHQ1NLCU1YFFIEBXKRWYWHAZS2">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">45</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDI15HUKBPPDTFBZ2GP0AQKVPMQOBILM2GUYMBKWEUNMZCM53IG5WM">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQX1ZRSMTZG5MPFDT0XUR01CHUB0RAZZWHAOFKPN0DZJXGHMLHP">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">92</td>
+</tr>
+</table><br><a name="IDN1JWUYGOODFONDL5HPKP33E00GLPUF5X3VQTI1OTXOALBLKSWWVK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.2mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2780.875mil|Location2.Y=2787.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2780.875mil|Location2.Y=2787.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-1(44.78mm,71.628mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2780.875mil|Location2.Y=2787.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2780.875mil|Location2.Y=2787.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-2(47.32mm,71.628mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-3(47.32mm,61.062mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-4(44.78mm,61.062mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.438mil|Location2.X=1964.562mil|Location1.Y=3774.438mil|Location2.Y=3783.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.438mil|Location2.X=1964.562mil|Location1.Y=3774.438mil|Location2.Y=3783.562mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad C2-1(50.533mm,94.285mm) on Top Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2006.375mil|Location2.X=2012.625mil|Location1.Y=3776.875mil|Location2.Y=3783.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2006.375mil|Location2.X=2012.625mil|Location1.Y=3776.875mil|Location2.Y=3783.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad C2-1(50.533mm,94.285mm) on Top Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.438mil|Location2.X=1964.562mil|Location1.Y=3772.438mil|Location2.Y=3781.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.438mil|Location2.X=1964.562mil|Location1.Y=3772.438mil|Location2.Y=3781.562mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad C2-1(50.533mm,94.285mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835.438mil|Location2.X=1844.562mil|Location1.Y=3640.438mil|Location2.Y=3649.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835.438mil|Location2.X=1844.562mil|Location1.Y=3640.438mil|Location2.Y=3649.562mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad C2-2(45.987mm,94.285mm) on Top Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835.438mil|Location2.X=1844.562mil|Location1.Y=3642.438mil|Location2.Y=3651.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835.438mil|Location2.X=1844.562mil|Location1.Y=3642.438mil|Location2.Y=3651.562mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad C2-2(45.987mm,94.285mm) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.375mil|Location2.X=2365.625mil|Location1.Y=3772.375mil|Location2.Y=3778.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.375mil|Location2.X=2365.625mil|Location1.Y=3772.375mil|Location2.Y=3778.625mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad L1-1(60.084mm,93.294mm) on Top Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2708.688mil|Location2.X=2717.812mil|Location1.Y=3770.938mil|Location2.Y=3780.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2708.688mil|Location2.X=2717.812mil|Location1.Y=3770.938mil|Location2.Y=3780.062mil|Absolute=True">Clearance Constraint: (0.089mm &lt; 0.2mm) Between Pad L1-2(70.168mm,93.294mm) on Top Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2006.938mil|Location2.X=2016.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2006.938mil|Location2.X=2016.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-1(52.324mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2006.938mil|Location2.X=2016.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2006.938mil|Location2.X=2016.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-1(52.324mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2005.938mil|Location2.X=2015.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2005.938mil|Location2.X=2015.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-1(52.324mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2005.938mil|Location2.X=2015.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2005.938mil|Location2.X=2015.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-1(52.324mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1878.938mil|Location2.X=1888.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1878.938mil|Location2.X=1888.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-2(46.584mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1788.938mil|Location2.X=1798.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1788.938mil|Location2.X=1798.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-2(46.584mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1877.938mil|Location2.X=1887.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1877.938mil|Location2.X=1887.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-2(46.584mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1878.938mil|Location2.X=1888.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1878.938mil|Location2.X=1888.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R7-2(46.584mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1837.875mil|Location2.X=1844.125mil|Location1.Y=3742.375mil|Location2.Y=3748.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1837.875mil|Location2.X=1844.125mil|Location1.Y=3742.375mil|Location2.Y=3748.625mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad R7-2(46.584mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.938mil|Location2.X=2369.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.938mil|Location2.X=2369.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-1(61.29mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.938mil|Location2.X=2369.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.938mil|Location2.X=2369.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-1(61.29mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2358.938mil|Location2.X=2368.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2358.938mil|Location2.X=2368.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-1(61.29mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2358.938mil|Location2.X=2368.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2358.938mil|Location2.X=2368.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-1(61.29mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2230.938mil|Location2.X=2240.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2230.938mil|Location2.X=2240.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-2(55.55mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.938mil|Location2.X=2151.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.938mil|Location2.X=2151.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-2(55.55mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2231.938mil|Location2.X=2241.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2231.938mil|Location2.X=2241.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-2(55.55mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2231.938mil|Location2.X=2241.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2231.938mil|Location2.X=2241.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R8-2(55.55mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2708.938mil|Location2.X=2718.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2708.938mil|Location2.X=2718.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-1(70.155mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2707.938mil|Location2.X=2717.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2707.938mil|Location2.X=2717.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-1(70.155mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2708.938mil|Location2.X=2718.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2708.938mil|Location2.X=2718.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-1(70.155mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2707.938mil|Location2.X=2717.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2707.938mil|Location2.X=2717.062mil|Location1.Y=3807.938mil|Location2.Y=3817.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-1(70.155mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.938mil|Location2.X=2500.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.938mil|Location2.X=2500.062mil|Location1.Y=3739.938mil|Location2.Y=3749.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-2(64.414mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.938mil|Location2.X=2590.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.938mil|Location2.X=2590.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-2(64.414mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2579.938mil|Location2.X=2589.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2579.938mil|Location2.X=2589.062mil|Location1.Y=3808.938mil|Location2.Y=3818.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-2(64.414mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.938mil|Location2.X=2590.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.938mil|Location2.X=2590.062mil|Location1.Y=3740.938mil|Location2.Y=3750.062mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Pad R9-2(64.414mm,95.987mm) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2796.828mil|Location2.Y=2803.077mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2796.828mil|Location2.Y=2803.077mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad U4-1(44.78mm,71.628mm) on Bottom Layer And Track (40.855mm,71.119mm)(69.317mm,71.119mm) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2796.828mil|Location2.Y=2803.077mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2796.828mil|Location2.Y=2803.077mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad U4-2(47.32mm,71.628mm) on Bottom Layer And Track (40.855mm,71.119mm)(69.317mm,71.119mm) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1885.875mil|Location2.X=1892.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad U4-3(47.32mm,61.062mm) on Bottom Layer And Track (40.855mm,61.519mm)(69.317mm,61.519mm) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1785.875mil|Location2.X=1792.125mil|Location1.Y=2418.875mil|Location2.Y=2425.125mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad U4-4(44.78mm,61.062mm) on Bottom Layer And Track (40.855mm,61.519mm)(69.317mm,61.519mm) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835.438mil|Location2.X=1844.562mil|Location1.Y=3774.438mil|Location2.Y=3783.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835.438mil|Location2.X=1844.562mil|Location1.Y=3774.438mil|Location2.Y=3783.562mil|Absolute=True">Clearance Constraint: (0.051mm &lt; 0.2mm) Between Region (0 hole(s)) Keep-Out Layer And Track (45.136mm,95.987mm)(46.584mm,95.987mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDR3H01BUSQ0UDNFDFWCZSOJNAGJZ00GHJODLIXECCNIWTKDKY3GFC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1734.304mil|Location2.X=1791.696mil|Location1.Y=2763.28mil|Location2.Y=2820.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1734.304mil|Location2.X=1791.696mil|Location1.Y=2763.28mil|Location2.Y=2820.672mil|Absolute=True">Short-Circuit Constraint: Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-1(44.78mm,71.628mm) on Bottom Layer Location : [X = 44.78mm][Y = 70.916mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1834.304mil|Location2.X=1891.696mil|Location1.Y=2763.28mil|Location2.Y=2820.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1834.304mil|Location2.X=1891.696mil|Location1.Y=2763.28mil|Location2.Y=2820.672mil|Absolute=True">Short-Circuit Constraint: Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-2(47.32mm,71.628mm) on Bottom Layer Location : [X = 47.32mm][Y = 70.916mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1833.986mil|Location2.X=1892.014mil|Location1.Y=2401.986mil|Location2.Y=2460.014mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1833.986mil|Location2.X=1892.014mil|Location1.Y=2401.986mil|Location2.Y=2460.014mil|Absolute=True">Short-Circuit Constraint: Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-3(47.32mm,61.062mm) on Bottom Layer Location : [X = 47.32mm][Y = 61.747mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.986mil|Location2.X=1792.014mil|Location1.Y=2401.986mil|Location2.Y=2460.014mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.986mil|Location2.X=1792.014mil|Location1.Y=2401.986mil|Location2.Y=2460.014mil|Absolute=True">Short-Circuit Constraint: Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-4(44.78mm,61.062mm) on Bottom Layer Location : [X = 44.78mm][Y = 61.747mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHUKIGXASP4XVFO54L0HQHTRWKMTWY4HKX5E5RDHX0GDQEBOY3BTB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1490.701mil|Location2.X=1711.299mil|Location1.Y=3937.701mil|Location2.Y=4158.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1490.701mil|Location2.X=1711.299mil|Location1.Y=3937.701mil|Location2.Y=4158.299mil|Absolute=True">Un-Routed Net Constraint: Via (40.665mm,102.819mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.701mil|Location2.X=2825.299mil|Location1.Y=3187.701mil|Location2.Y=3408.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.701mil|Location2.X=2825.299mil|Location1.Y=3187.701mil|Location2.Y=3408.299mil|Absolute=True">Un-Routed Net Constraint: Via (68.961mm,83.769mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDE40OVQ1OVGJFGWFMCHAND4DONGHQ1NLCU1YFFIEBXKRWYWHAZS2"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.375mil|Location2.X=1612.625mil|Location1.Y=2851.688mil|Location2.Y=2862.938mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.375mil|Location2.X=1612.625mil|Location1.Y=2851.688mil|Location2.Y=2862.938mil|Absolute=True">Silk To Silk Clearance Constraint: (0.061mm &lt; 0.254mm) Between Arc (40.818mm,72.342mm) on Top Overlay And Text "R23" (41.521mm,72.733mm) on Top Overlay Silk Text to Silk Clearance [0.061mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1634.719mil|Location2.X=1642.386mil|Location1.Y=3067.607mil|Location2.Y=3075.274mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1634.719mil|Location2.X=1642.386mil|Location1.Y=3067.607mil|Location2.Y=3075.274mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (41.739mm,78.308mm) on Top Overlay And Text "D4" (41.786mm,77.348mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2242.607mil|Location2.X=2250.274mil|Location1.Y=3206.286mil|Location2.Y=3213.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2242.607mil|Location2.X=2250.274mil|Location1.Y=3206.286mil|Location2.Y=3213.952mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (57.226mm,81.655mm) on Top Overlay And Text "D2" (56.393mm,80.704mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1471.488mil|Location2.X=1479.155mil|Location1.Y=3511.417mil|Location2.Y=3519.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1471.488mil|Location2.X=1479.155mil|Location1.Y=3511.417mil|Location2.Y=3519.083mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "*" (38.598mm,89.287mm) on Bottom Overlay And Text "U3" (38.473mm,90.774mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1504.204mil|Location2.X=1515.454mil|Location1.Y=3475.204mil|Location2.Y=3486.454mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1504.204mil|Location2.X=1515.454mil|Location1.Y=3475.204mil|Location2.Y=3486.454mil|Absolute=True">Silk To Silk Clearance Constraint: (0.015mm &lt; 0.254mm) Between Text "*" (38.598mm,89.287mm) on Bottom Overlay And Track (38.291mm,86.347mm)(38.291mm,88.354mm) on Bottom Overlay Silk Text to Silk Clearance [0.015mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1504.802mil|Location2.X=1516.052mil|Location1.Y=3665.454mil|Location2.Y=3676.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1504.802mil|Location2.X=1516.052mil|Location1.Y=3665.454mil|Location2.Y=3676.704mil|Absolute=True">Silk To Silk Clearance Constraint: (0.015mm &lt; 0.254mm) Between Text "*" (38.613mm,94.12mm) on Bottom Overlay And Track (38.306mm,91.18mm)(38.306mm,93.186mm) on Bottom Overlay Silk Text to Silk Clearance [0.015mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.595mil|Location2.X=2121.845mil|Location1.Y=3461.305mil|Location2.Y=3472.555mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.595mil|Location2.X=2121.845mil|Location1.Y=3461.305mil|Location2.Y=3472.555mil|Absolute=True">Silk To Silk Clearance Constraint: (0.2531mm (9.964mil) &lt; 0.254mm (10mil)) Between Text "C1" (53.498mm,88.227mm) on Top Overlay And Text "C6" (55.672mm,88.252mm) on Top Overlay Silk Text to Silk Clearance [0.253mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1972.521mil|Location2.X=1983.771mil|Location1.Y=3291.944mil|Location2.Y=3303.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1972.521mil|Location2.X=1983.771mil|Location1.Y=3291.944mil|Location2.Y=3303.194mil|Absolute=True">Silk To Silk Clearance Constraint: (0.147mm &lt; 0.254mm) Between Text "C11" (50.745mm,82.558mm) on Bottom Overlay And Track (48.636mm,83.895mm)(50.636mm,83.895mm) on Bottom Overlay Silk Text to Silk Clearance [0.147mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1722.802mil|Location2.X=1734.052mil|Location1.Y=3633.857mil|Location2.Y=3645.107mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1722.802mil|Location2.X=1734.052mil|Location1.Y=3633.857mil|Location2.Y=3645.107mil|Absolute=True">Silk To Silk Clearance Constraint: (0.147mm &lt; 0.254mm) Between Text "C12" (44.103mm,91.943mm) on Bottom Overlay And Track (43.765mm,92.197mm)(43.765mm,94.197mm) on Bottom Overlay Silk Text to Silk Clearance [0.147mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.464mil|Location2.X=1787.714mil|Location1.Y=3706.012mil|Location2.Y=3717.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.464mil|Location2.X=1787.714mil|Location1.Y=3706.012mil|Location2.Y=3717.262mil|Absolute=True">Silk To Silk Clearance Constraint: (0.072mm &lt; 0.254mm) Between Text "C12" (44.103mm,91.943mm) on Bottom Overlay And Track (45.377mm,93.713mm)(45.377mm,94.803mm) on Bottom Overlay Silk Text to Silk Clearance [0.072mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.233mil|Location2.X=1787.483mil|Location1.Y=3687.744mil|Location2.Y=3699.234mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.233mil|Location2.X=1787.483mil|Location1.Y=3687.744mil|Location2.Y=3699.234mil|Absolute=True">Silk To Silk Clearance Constraint: (0.155mm &lt; 0.254mm) Between Text "C12" (44.103mm,91.943mm) on Bottom Overlay And Track (45.377mm,93.713mm)(53.531mm,93.713mm) on Bottom Overlay Silk Text to Silk Clearance [0.155mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.892mil|Location2.X=1791.142mil|Location1.Y=3522.396mil|Location2.Y=3533.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.892mil|Location2.X=1791.142mil|Location1.Y=3522.396mil|Location2.Y=3533.646mil|Absolute=True">Silk To Silk Clearance Constraint: (0.15mm &lt; 0.254mm) Between Text "C14" (44.153mm,88.412mm) on Bottom Overlay And Text "R14" (47.884mm,89.645mm) on Bottom Overlay Silk Text to Silk Clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.798mil|Location2.X=1735.048mil|Location1.Y=3494.857mil|Location2.Y=3506.107mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.798mil|Location2.X=1735.048mil|Location1.Y=3494.857mil|Location2.Y=3506.107mil|Absolute=True">Silk To Silk Clearance Constraint: (0.198mm &lt; 0.254mm) Between Text "C14" (44.153mm,88.412mm) on Bottom Overlay And Track (43.765mm,88.586mm)(43.765mm,90.586mm) on Bottom Overlay Silk Text to Silk Clearance [0.198mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2094.019mil|Location2.X=2101.685mil|Location1.Y=3239.964mil|Location2.Y=3247.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2094.019mil|Location2.X=2101.685mil|Location1.Y=3239.964mil|Location2.Y=3247.631mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C3" (52.286mm,83.866mm) on Top Overlay And Text "D3" (53.967mm,80.726mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2193.875mil|Location2.X=2205.125mil|Location1.Y=3448.375mil|Location2.Y=3459.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2193.875mil|Location2.X=2205.125mil|Location1.Y=3448.375mil|Location2.Y=3459.625mil|Absolute=True">Silk To Silk Clearance Constraint: (0.137mm &lt; 0.254mm) Between Text "C4" (57.729mm,88.231mm) on Top Overlay And Text "C6" (55.672mm,88.252mm) on Top Overlay Silk Text to Silk Clearance [0.137mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.965mil|Location2.X=2168.631mil|Location1.Y=3083.845mil|Location2.Y=3091.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.965mil|Location2.X=2168.631mil|Location1.Y=3083.845mil|Location2.Y=3091.512mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C5" (53.32mm,77.427mm) on Top Overlay And Track (54.403mm,78.576mm)(57.103mm,78.576mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2370.875mil|Location2.X=2382.125mil|Location1.Y=3129.305mil|Location2.Y=3140.555mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2370.875mil|Location2.X=2382.125mil|Location1.Y=3129.305mil|Location2.Y=3140.555mil|Absolute=True">Silk To Silk Clearance Constraint: (0.137mm &lt; 0.254mm) Between Text "C7" (58.501mm,78.794mm) on Top Overlay And Text "C8" (60.559mm,78.794mm) on Top Overlay Silk Text to Silk Clearance [0.137mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2450.875mil|Location2.X=2462.125mil|Location1.Y=3129.305mil|Location2.Y=3140.555mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2450.875mil|Location2.X=2462.125mil|Location1.Y=3129.305mil|Location2.Y=3140.555mil|Absolute=True">Silk To Silk Clearance Constraint: (0.086mm &lt; 0.254mm) Between Text "C8" (60.559mm,78.794mm) on Top Overlay And Text "C9" (62.565mm,78.794mm) on Top Overlay Silk Text to Silk Clearance [0.086mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2214.577mil|Location2.X=2225.827mil|Location1.Y=3162.018mil|Location2.Y=3173.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2214.577mil|Location2.X=2225.827mil|Location1.Y=3162.018mil|Location2.Y=3173.268mil|Absolute=True">Silk To Silk Clearance Constraint: (0.238mm &lt; 0.254mm) Between Text "D2" (56.393mm,80.704mm) on Top Overlay And Track (54.403mm,80.276mm)(57.103mm,80.276mm) on Top Overlay Silk Text to Silk Clearance [0.238mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2289.504mil|Location2.X=2300.754mil|Location1.Y=3197.934mil|Location2.Y=3209.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2289.504mil|Location2.X=2300.754mil|Location1.Y=3197.934mil|Location2.Y=3209.184mil|Absolute=True">Silk To Silk Clearance Constraint: (0.22mm &lt; 0.254mm) Between Text "D2" (56.393mm,80.704mm) on Top Overlay And Track (58.47mm,80.712mm)(58.47mm,82.712mm) on Top Overlay Silk Text to Silk Clearance [0.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2144.375mil|Location2.X=2155.625mil|Location1.Y=3999.113mil|Location2.Y=4010.363mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2144.375mil|Location2.X=2155.625mil|Location1.Y=3999.113mil|Location2.Y=4010.363mil|Absolute=True">Silk To Silk Clearance Constraint: (0.216mm &lt; 0.254mm) Between Text "Feelings" (54.331mm,100.485mm) on Top Overlay And Text "ForGood" (54.61mm,101.956mm) on Top Overlay Silk Text to Silk Clearance [0.216mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.435mil|Location2.X=1744.685mil|Location1.Y=4090.554mil|Location2.Y=4101.804mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.435mil|Location2.X=1744.685mil|Location1.Y=4090.554mil|Location2.Y=4101.804mil|Absolute=True">Silk To Silk Clearance Constraint: (0.093mm &lt; 0.254mm) Between Text "Here" (44.171mm,102.87mm) on Top Overlay And Text "Touch" (43.84mm,104.216mm) on Top Overlay Silk Text to Silk Clearance [0.093mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2567.696mil|Location2.X=2578.946mil|Location1.Y=2470.434mil|Location2.Y=2481.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2567.696mil|Location2.X=2578.946mil|Location1.Y=2470.434mil|Location2.Y=2481.684mil|Absolute=True">Silk To Silk Clearance Constraint: (0.217mm &lt; 0.254mm) Between Text "J2" (65.029mm,63.127mm) on Top Overlay And Track (61.403mm,62.707mm)(71.563mm,62.707mm) on Top Overlay Silk Text to Silk Clearance [0.217mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2593.958mil|Location2.X=2605.208mil|Location1.Y=3126.695mil|Location2.Y=3137.945mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2593.958mil|Location2.X=2605.208mil|Location1.Y=3126.695mil|Location2.Y=3137.945mil|Absolute=True">Silk To Silk Clearance Constraint: (0.046mm &lt; 0.254mm) Between Text "J3" (65.879mm,79.228mm) on Top Overlay And Track (66.129mm,72.89mm)(66.129mm,80.587mm) on Top Overlay Silk Text to Silk Clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2593.958mil|Location2.X=2605.208mil|Location1.Y=3167.073mil|Location2.Y=3178.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2593.958mil|Location2.X=2605.208mil|Location1.Y=3167.073mil|Location2.Y=3178.323mil|Absolute=True">Silk To Silk Clearance Constraint: (0.046mm &lt; 0.254mm) Between Text "J3" (65.879mm,79.228mm) on Top Overlay And Track (66.129mm,80.587mm)(77.94mm,80.587mm) on Top Overlay Silk Text to Silk Clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1993.935mil|Location2.X=2005.185mil|Location1.Y=3500.093mil|Location2.Y=3511.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1993.935mil|Location2.X=2005.185mil|Location1.Y=3500.093mil|Location2.Y=3511.343mil|Absolute=True">Silk To Silk Clearance Constraint: (0.213mm &lt; 0.254mm) Between Text "Q" (50.955mm,89.279mm) on Bottom Overlay And Track (50.139mm,88.875mm)(51.089mm,88.875mm) on Bottom Overlay Silk Text to Silk Clearance [0.213mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.333mil|Location2.X=1734.583mil|Location1.Y=3889.806mil|Location2.Y=3901.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.333mil|Location2.X=1734.583mil|Location1.Y=3889.806mil|Location2.Y=3901.056mil|Absolute=True">Silk To Silk Clearance Constraint: (0.096mm &lt; 0.254mm) Between Text "R10" (44.582mm,99.119mm) on Bottom Overlay And Track (42.363mm,98.832mm)(44.363mm,98.832mm) on Bottom Overlay Silk Text to Silk Clearance [0.096mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1580.774mil|Location2.X=1592.024mil|Location1.Y=3891.306mil|Location2.Y=3902.556mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1580.774mil|Location2.X=1592.024mil|Location1.Y=3891.306mil|Location2.Y=3902.556mil|Absolute=True">Silk To Silk Clearance Constraint: (0.172mm &lt; 0.254mm) Between Text "R11" (40.961mm,99.195mm) on Bottom Overlay And Track (38.908mm,98.832mm)(40.908mm,98.832mm) on Bottom Overlay Silk Text to Silk Clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2106.082mil|Location2.X=2117.332mil|Location1.Y=3358.444mil|Location2.Y=3369.694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2106.082mil|Location2.X=2117.332mil|Location1.Y=3358.444mil|Location2.Y=3369.694mil|Absolute=True">Silk To Silk Clearance Constraint: (0.172mm &lt; 0.254mm) Between Text "R12" (54.137mm,84.235mm) on Bottom Overlay And Track (52.111mm,85.597mm)(54.111mm,85.597mm) on Bottom Overlay Silk Text to Silk Clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1846.97mil|Location2.X=1854.637mil|Location1.Y=3042.127mil|Location2.Y=3049.793mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1846.97mil|Location2.X=1854.637mil|Location1.Y=3042.127mil|Location2.Y=3049.793mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R15" (47.01mm,76.564mm) on Top Overlay And Track (46.346mm,77.367mm)(48.346mm,77.367mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1763.243mil|Location2.X=1774.493mil|Location1.Y=3221.875mil|Location2.Y=3233.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1763.243mil|Location2.X=1774.493mil|Location1.Y=3221.875mil|Location2.Y=3233.125mil|Absolute=True">Silk To Silk Clearance Constraint: (0.137mm &lt; 0.254mm) Between Text "R2" (44.929mm,80.117mm) on Top Overlay And Text "R5" (45.051mm,82.174mm) on Top Overlay Silk Text to Silk Clearance [0.137mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1686.292mil|Location2.X=1697.542mil|Location1.Y=2943.944mil|Location2.Y=2955.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1686.292mil|Location2.X=1697.542mil|Location1.Y=2943.944mil|Location2.Y=2955.194mil|Absolute=True">Silk To Silk Clearance Constraint: (0.096mm &lt; 0.254mm) Between Text "R21" (42.975mm,73.744mm) on Bottom Overlay And Track (41.367mm,75.031mm)(43.367mm,75.031mm) on Bottom Overlay Silk Text to Silk Clearance [0.096mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1638.714mil|Location2.X=1649.964mil|Location1.Y=2923.494mil|Location2.Y=2934.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1638.714mil|Location2.X=1649.964mil|Location1.Y=2923.494mil|Location2.Y=2934.744mil|Absolute=True">Silk To Silk Clearance Constraint: (0.237mm &lt; 0.254mm) Between Text "R23" (41.521mm,72.733mm) on Top Overlay And Track (41.961mm,73.814mm)(41.961mm,75.921mm) on Top Overlay Silk Text to Silk Clearance [0.237mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1976.613mil|Location2.X=1987.863mil|Location1.Y=3141.936mil|Location2.Y=3153.186mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1976.613mil|Location2.X=1987.863mil|Location1.Y=3141.936mil|Location2.Y=3153.186mil|Absolute=True">Silk To Silk Clearance Constraint: (0.096mm &lt; 0.254mm) Between Text "R4" (48.849mm,78.773mm) on Top Overlay And Track (49.398mm,80.06mm)(51.398mm,80.06mm) on Top Overlay Silk Text to Silk Clearance [0.096mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1978.405mil|Location2.X=1986.072mil|Location1.Y=3113.207mil|Location2.Y=3120.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1978.405mil|Location2.X=1986.072mil|Location1.Y=3113.207mil|Location2.Y=3120.873mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R4" (48.849mm,78.773mm) on Top Overlay And Track (50.44mm,79.173mm)(52.44mm,79.173mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.796mil|Location2.X=1788.463mil|Location1.Y=2989.488mil|Location2.Y=2997.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.796mil|Location2.X=1788.463mil|Location1.Y=2989.488mil|Location2.Y=2997.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R6" (44.663mm,76.03mm) on Top Overlay And Track (44.922mm,75.921mm)(45.618mm,75.921mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.825mil|Location2.X=1804.075mil|Location1.Y=2985.825mil|Location2.Y=2997.075mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.825mil|Location2.X=1804.075mil|Location1.Y=2985.825mil|Location2.Y=2997.075mil|Absolute=True">Silk To Silk Clearance Constraint: (0.024mm &lt; 0.254mm) Between Text "R6" (44.663mm,76.03mm) on Top Overlay And Track (45.618mm,73.814mm)(45.618mm,75.921mm) on Top Overlay Silk Text to Silk Clearance [0.024mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.167mil|Location2.X=1818.833mil|Location1.Y=2989.488mil|Location2.Y=2997.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1811.167mil|Location2.X=1818.833mil|Location1.Y=2989.488mil|Location2.Y=2997.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R6" (44.663mm,76.03mm) on Top Overlay And Track (46.101mm,73.804mm)(46.101mm,75.91mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1813.594mil|Location2.X=1821.261mil|Location1.Y=2989.488mil|Location2.Y=2997.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1813.594mil|Location2.X=1821.261mil|Location1.Y=2989.488mil|Location2.Y=2997.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R6" (44.663mm,76.03mm) on Top Overlay And Track (46.101mm,75.91mm)(46.797mm,75.91mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.743mil|Location2.X=1829.993mil|Location1.Y=3034.943mil|Location2.Y=3046.193mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.743mil|Location2.X=1829.993mil|Location1.Y=3034.943mil|Location2.Y=3046.193mil|Absolute=True">Silk To Silk Clearance Constraint: (0.147mm &lt; 0.254mm) Between Text "R6" (44.663mm,76.03mm) on Top Overlay And Track (46.346mm,77.367mm)(48.346mm,77.367mm) on Top Overlay Silk Text to Silk Clearance [0.147mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2483.604mil|Location2.X=2494.854mil|Location1.Y=3677.957mil|Location2.Y=3689.207mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2483.604mil|Location2.X=2494.854mil|Location1.Y=3677.957mil|Location2.Y=3689.207mil|Absolute=True">Silk To Silk Clearance Constraint: (0.151mm &lt; 0.254mm) Between Text "R9" (63.251mm,93.362mm) on Bottom Overlay And Track (63.208mm,93.713mm)(63.208mm,94.803mm) on Bottom Overlay Silk Text to Silk Clearance [0.151mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2484.577mil|Location2.X=2495.827mil|Location1.Y=3677.964mil|Location2.Y=3689.214mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2484.577mil|Location2.X=2495.827mil|Location1.Y=3677.964mil|Location2.Y=3689.214mil|Absolute=True">Silk To Silk Clearance Constraint: (0.148mm &lt; 0.254mm) Between Text "R9" (63.251mm,93.362mm) on Bottom Overlay And Track (63.208mm,93.713mm)(71.361mm,93.713mm) on Bottom Overlay Silk Text to Silk Clearance [0.148mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2659.57mil|Location2.X=2670.82mil|Location1.Y=2857.462mil|Location2.Y=2868.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2659.57mil|Location2.X=2670.82mil|Location1.Y=2857.462mil|Location2.Y=2868.712mil|Absolute=True">Silk To Silk Clearance Constraint: (0.183mm &lt; 0.254mm) Between Text "The IC exception :)" (50.368mm,71.504mm) on Top Overlay And Track (66.129mm,72.89mm)(77.94mm,72.89mm) on Top Overlay Silk Text to Silk Clearance [0.183mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1499.938mil|Location2.X=1513.675mil|Location1.Y=3386.491mil|Location2.Y=3397.741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1499.938mil|Location2.X=1513.675mil|Location1.Y=3386.491mil|Location2.Y=3397.741mil|Absolute=True">Silk To Silk Clearance Constraint: (0.235mm &lt; 0.254mm) Between Text "U2" (38.346mm,85.923mm) on Bottom Overlay And Track (38.291mm,86.347mm)(38.291mm,88.354mm) on Bottom Overlay Silk Text to Silk Clearance [0.235mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1502.473mil|Location2.X=1513.723mil|Location1.Y=3577.149mil|Location2.Y=3588.399mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Guilherme\OneDrive - IPLeiria\2_Formula Student\23_24\1_PCBs\Voltage_Indicator\HV_Indicator\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1502.473mil|Location2.X=1513.723mil|Location1.Y=3577.149mil|Location2.Y=3588.399mil|Absolute=True">Silk To Silk Clearance Constraint: (0.202mm &lt; 0.254mm) Between Text "U3" (38.473mm,90.774mm) on Bottom Overlay And Track (38.306mm,91.18mm)(38.306mm,93.186mm) on Bottom Overlay Silk Text to Silk Clearance [0.202mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

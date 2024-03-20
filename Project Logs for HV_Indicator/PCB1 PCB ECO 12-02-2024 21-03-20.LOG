@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=U4 Old Footprint=PC817 New Footprint=VO617A
+Change Component Comment : Designator=U4 Old Comment=PC817 New Comment=VO617A-3X018T
+Change component parameters: Designator = "U4" ("U4"); Footprint = "PC817"; UniqueID = "\QTYSOSDD" ("\QTYSOSDD")
+Change component parameters (AddParameter): Name = "NexarPartId"; Value = "68099910"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Channels"; Value = "1"; VariantName = "[No Variations]"
