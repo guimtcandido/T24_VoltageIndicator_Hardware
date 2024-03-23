@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\5_GitSTUFF\0003_LART\2023_2024\00_Voltage_Indicator\T24_VoltageIndicator_Hardware\PCB_v2.PcbDoc
-Date     : 20/03/2024
-Time     : 21:48:43
+Date     : 23/03/2024
+Time     : 11:29:06
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
    Violation between Clearance Constraint: (Collision < 0.254mm) Between Board Cutout (Multi-Layer)Region (0 hole(s)) Multi-Layer And Pad U4-1(99.492mm,93.904mm) on Top Layer 
@@ -141,14 +141,7 @@ Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
-   Violation between Minimum Solder Mask Sliver Constraint: (0.093mm < 0.254mm) Between Pad C6-1(76.205mm,88.24mm) on Top Layer And Via (75.159mm,88.24mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.093mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.191mm < 0.254mm) Between Pad U1-15(73.334mm,93.376mm) on Top Layer And Via (74.271mm,94.026mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.191mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.084mm < 0.254mm) Between Pad U1-16(73.334mm,94.026mm) on Top Layer And Via (74.271mm,94.026mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.084mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.191mm < 0.254mm) Between Pad U1-17(73.334mm,94.676mm) on Top Layer And Via (74.271mm,94.026mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.191mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.161mm < 0.254mm) Between Via (74.625mm,92.05mm) from Top Layer to Bottom Layer And Via (74.6mm,91.186mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.161mm] / [Bottom Solder] Mask Sliver [0.161mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.245mm < 0.254mm) Between Via (74.625mm,92.05mm) from Top Layer to Bottom Layer And Via (74.6mm,92.998mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.245mm] / [Bottom Solder] Mask Sliver [0.245mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.186mm < 0.254mm) Between Via (74.6mm,90.297mm) from Top Layer to Bottom Layer And Via (74.6mm,91.186mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.186mm] / [Bottom Solder] Mask Sliver [0.186mm]
-Rule Violations :7
+Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (0.116mm < 0.254mm) Between Pad C10-1(90.602mm,94.218mm) on Top Layer And Track (89.712mm,94.153mm)(89.712mm,96.153mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.116mm]
@@ -330,6 +323,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 287
+Violations Detected : 280
 Waived Violations : 0
 Time Elapsed        : 00:00:02
