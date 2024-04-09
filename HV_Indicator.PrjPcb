@@ -592,6 +592,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NEYDPUUF
 
+[Document33]
+DocumentPath=VoltageIndicator_V3.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MOWXTTQN
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for HV_Indicator\Design Rule Check - PCB1.html
 DItemRevisionGUID=
