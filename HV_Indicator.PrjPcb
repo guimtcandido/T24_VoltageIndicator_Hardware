@@ -488,7 +488,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=ESEQDPKY
 
 [Document27]
 DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0007 - Diodes SMD\Diodes SMD.SchLib
@@ -505,7 +505,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OHAOVAXR
 
 [Document28]
 DocumentPath=CAMtastic1.Cam
@@ -608,6 +608,40 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MOWXTTQN
+
+[Document34]
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0008 - Diodes Through Hole\Diodes Through Hole.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=IVYJVBTI
+
+[Document35]
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0008 - Diodes Through Hole\Diodes Through Hole.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=NNEYOCQH
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for HV_Indicator\Design Rule Check - PCB1.html
