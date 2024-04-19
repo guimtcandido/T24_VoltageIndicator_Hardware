@@ -1,0 +1,11 @@
+Added Component: Designator=U4(VO617A)
+Add component (AddParameter): Name = "NexarPartId"; Value = "68099910"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Channels"; Value = "1"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetR21_1 Pin=U4-1
+Added Pin To Net: NetName=NetR18_1 Pin=U4-2
+Added Pin To Net: NetName=LV GND Pin=U4-3
+Added Pin To Net: NetName=NetD7_C Pin=U4-4
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Pre-Charge Detector Member=Component U4 VO617A-3X018T
