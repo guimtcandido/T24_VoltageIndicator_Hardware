@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetR18_1 Pin=U3-
+Added Component: Designator=*(M3 - Mounting Hole)
+Added Component: Designator=*(M3 - Mounting Hole)
+Added Component: Designator=*(M3 - Mounting Hole)
+Added Component: Designator=*(M3 - Mounting Hole)
+Add Pin To Net: Unknown Pin: Pin U3-1
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole

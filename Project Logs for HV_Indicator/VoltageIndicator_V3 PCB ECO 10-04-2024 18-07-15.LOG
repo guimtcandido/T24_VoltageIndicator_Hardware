@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=NetR18_1 Pin=R18-1
+Added Pin To Net: NetName=NetR18_1 Pin=U4-2
+Added Net: Name=NetR18_1
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole

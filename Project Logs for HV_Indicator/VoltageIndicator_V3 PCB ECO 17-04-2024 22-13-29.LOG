@@ -1,0 +1,12 @@
+Added Component: Designator=J1(TE DYNAMIC 3200)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "S2B-XH-A-1(LF)(SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_2 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Connectors Member=Component J1 TE D3200

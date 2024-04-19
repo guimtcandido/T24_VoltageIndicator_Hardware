@@ -1,0 +1,27 @@
+Change Component Designator: OldDesignator= NewDesignator=*
+Change Component Designator: OldDesignator= NewDesignator=*
+Change Component Designator: OldDesignator= NewDesignator=*
+Change Component Designator: OldDesignator= NewDesignator=*
+Added Component: Designator=J1(2P JST XH2.54mm 90º)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "S2B-XH-A-1(LF)(SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=J4(2P JST XH2.54mm 90º)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "S2B-XH-A-1(LF)(SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_2 Pin=J1-1
+Added Pin To Net: NetName=NetC2_2 Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J4-1
+Added Pin To Net: NetName=GND Pin=J4-2
+Add Pin To Net: Unknown Pin: Pin U3-1
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Connectors Member=Component J1 S2B-XH-A-1(LF)(SN)
+Added Member To Class: ClassName=Connectors Member=Component J4 S2B-XH-A-1(LF)(SN)

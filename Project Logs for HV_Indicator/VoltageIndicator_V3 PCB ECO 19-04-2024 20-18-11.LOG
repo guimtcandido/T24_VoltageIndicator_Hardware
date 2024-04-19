@@ -1,0 +1,13 @@
+Added Component: Designator=J2(3P JST XH2.54mm 90º)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "S3B-XH-A(LF)(SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ2_1 Pin=J2-1
+Added Pin To Net: NetName=NetD7_C Pin=J2-2
+Added Pin To Net: NetName=LV GND Pin=J2-3
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Connectors Member=Component J2 S3B-XH-A(LF)(SN)

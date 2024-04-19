@@ -1,0 +1,111 @@
+Removed Pin From Net: NetName=GND Pin=C14-1
+Removed Pin From Net: NetName=NetC2_2 Pin=J1-1
+Removed Pin From Net: NetName=GND Pin=J1-2
+Removed Pin From Net: NetName=+12 Pin=R23-1
+Removed Pin From Net: NetName=GND Pin=R23-3
+Removed Member From Class: ClassName=Pre-Charge Detector Member=C14
+Change Component Footprint: Designator=R23 Old Footprint=3203X103P New Footprint=SMV1W390KJT
+Change Component Footprint: Designator=J1 Old Footprint=TE DYNAMIC 3200 New Footprint=MOLEX_428203213
+Change Component Comment : Designator=R23 Old Comment=3203X502P New Comment=SMV1W390KJT
+Change Component Comment : Designator=J1 Old Comment=TE D3200 New Comment=Molex 42820-3213
+Change component parameters: Designator = "J1" ("J1"); Footprint = "TE DYNAMIC 3200"; UniqueID = "\LYZQOXYH" ("\LYZQOXYH")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "428203213"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R23" ("R23"); Footprint = "3203X103P"; UniqueID = "\AIURBPFZ" ("\AIURBPFZ")
+Change component parameters (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant with Exemptions"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "2-2176053-0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power_Rating"; Value = ".25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = ".33"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R19(SMV1W390KJT)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant with Exemptions"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "2-2176053-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power_Rating"; Value = ".25 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = ".33"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R20(SMV1W390KJT)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant with Exemptions"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "2-2176053-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power_Rating"; Value = ".25 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = ".33"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R24(0805)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant with Exemptions"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "2-2176053-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power_Rating"; Value = ".25 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = ".33"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R25(0805)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant with Exemptions"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "2-2176053-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power_Rating"; Value = ".25 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = ".33"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/2-2176053-0/TE+Connectivity/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_2 Pin=J1-P2_1
+Added Pin To Net: NetName=NetC2_2 Pin=J1-P2_2
+Added Pin To Net: NetName=GND Pin=J1-P3_1
+Added Pin To Net: NetName=GND Pin=J1-P3_2
+Added Pin To Net: NetName=GND Pin=R25-2
+Added Pin To Net: NetName=NetJ1_P1_1 Pin=J1-P1_1
+Added Pin To Net: NetName=NetJ1_P1_1 Pin=J1-P1_2
+Added Pin To Net: NetName=NetJ1_P1_1 Pin=R19-2
+Added Net: Name=NetJ1_P1_1
+Added Pin To Net: NetName=NetR19_1 Pin=R19-1
+Added Pin To Net: NetName=NetR19_1 Pin=R20-2
+Added Net: Name=NetR19_1
+Added Pin To Net: NetName=NetR20_1 Pin=R20-1
+Added Pin To Net: NetName=NetR20_1 Pin=R23-2
+Added Net: Name=NetR20_1
+Added Pin To Net: NetName=NetR23_1 Pin=R23-1
+Added Pin To Net: NetName=NetR23_1 Pin=R24-1
+Added Pin To Net: NetName=NetR23_1 Pin=U3-4
+Added Net: Name=NetR23_1
+Added Pin To Net: NetName=NetR24_2 Pin=R24-2
+Added Pin To Net: NetName=NetR24_2 Pin=R25-1
+Added Net: Name=NetR24_2
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Pre-Charge Detector Member=Component R19 SMV1W390KJT
+Added Member To Class: ClassName=Pre-Charge Detector Member=Component R20 SMV1W390KJT
+Added Member To Class: ClassName=Pre-Charge Detector Member=Component R24 10K
+Added Member To Class: ClassName=Pre-Charge Detector Member=Component R25 10K

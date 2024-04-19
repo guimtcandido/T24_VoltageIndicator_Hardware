@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=J1 Old Footprint=2P JST XH2.54mm 90º New Footprint=TE DYNAMIC 3200
+Change Component Comment : Designator=J1 Old Comment=S2B-XH-A-1(LF)(SN) New Comment=TE D3200
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole

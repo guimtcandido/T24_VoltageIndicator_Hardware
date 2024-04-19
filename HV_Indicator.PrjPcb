@@ -437,7 +437,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=DHNVMILY
 
 [Document24]
 DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0006 - Inductors SMD\Inductors SMD.PcbLib
@@ -642,6 +642,40 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NNEYOCQH
+
+[Document36]
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0030 - HV Connectors\HV_Connectors.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=VMVSKLGU
+
+[Document37]
+DocumentPath=..\..\..\..\0001_Personal\Libraries\Altium-Library\0030 - HV Connectors\HV_Connectors.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RHSPAMBT
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for HV_Indicator\Design Rule Check - PCB1.html

@@ -1,0 +1,15 @@
+Added Component: Designator=U3(MIC6270)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "MIC6270YM5-TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetR18_1 Pin=U3-1
+Added Pin To Net: NetName=GND Pin=U3-2
+Added Pin To Net: NetName=NetC10_2 Pin=U3-3
+Added Pin To Net: NetName=NetC14_2 Pin=U3-4
+Added Pin To Net: NetName=+12 Pin=U3-5
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Pre-Charge Detector Member=Component U3 MIC6270YM5-TR
