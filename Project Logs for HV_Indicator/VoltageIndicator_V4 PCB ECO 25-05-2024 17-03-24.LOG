@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetC2_2 Pin=J1-P1_1
+Removed Pin From Net: NetName=NetC2_2 Pin=J1-P1_2
+Removed Pin From Net: NetName=GND Pin=J1-P3_1
+Removed Pin From Net: NetName=GND Pin=J1-P3_2
+Added Pin To Net: NetName=GND Pin=J1-P1_1
+Added Pin To Net: NetName=GND Pin=J1-P1_2
+Added Pin To Net: NetName=NetC2_2 Pin=J1-P3_1
+Added Pin To Net: NetName=NetC2_2 Pin=J1-P3_2
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole

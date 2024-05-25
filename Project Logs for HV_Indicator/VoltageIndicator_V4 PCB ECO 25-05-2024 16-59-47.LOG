@@ -1,0 +1,16 @@
+Added Component: Designator=VR1(3203X502P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "3203X502P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/3203x502p/te-connectivity?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1623916%7FBA1%7Fpdf%7FEnglish%7FENG_CD_1623916_BA1.pdf%7F1-1623916-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "2.1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3203X502P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "279-3203X502P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/TE-Connectivity-Holsworthy/3203X502P?qs=GP7tGcbp1QQJNQgoJp42%2Fg%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+12 Pin=VR1-1
+Added Pin To Net: NetName=NetC12_2 Pin=VR1-2
+Added Pin To Net: NetName=GND Pin=VR1-3
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=60V_Detector Member=Component VR1 3203X502P
