@@ -762,6 +762,40 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FGJSYWUL
 
+[Document43]
+DocumentPath=C:\Users\Candido\Desktop\DC2781A-2_post\CAMtastic9.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document44]
+DocumentPath=CAMtastic10.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for HV_Indicator\Design Rule Check - PCB1.html
 DItemRevisionGUID=
@@ -956,6 +990,94 @@ DItemRevisionGUID=
 
 [GeneratedDocument49]
 DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V3.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument51]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument52]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument53]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument54]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument55]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument56]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument57]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument58]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GM
+DItemRevisionGUID=
+
+[GeneratedDocument59]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument60]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument61]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument62]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument63]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument64]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument65]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument66]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument67]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument68]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument69]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.REP
+DItemRevisionGUID=
+
+[GeneratedDocument70]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument71]
+DocumentPath=Project Outputs for HV_Indicator\VoltageIndicator_V4.TXT
 DItemRevisionGUID=
 
 [Configuration1]
@@ -1261,7 +1383,7 @@ OutputDefault8=0
 Configuration8_Name1=ForceUpdateSettings
 Configuration8_Item1=False
 Configuration8_Name2=OutputConfigurationParameter1
-Configuration8_Item2=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|GenerateSeparateViaTypeFiles=False|GenerateToolsByDrillSymbols=False|NumberOfDecimals=4|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Imperial|ZeroesMode=SuppressLeadingZeroes|DocumentPath=D:\5_GitSTUFF\0003_LART\2023_2024\00_Voltage_Indicator\T24_VoltageIndicator_Hardware\VoltageIndicator_V3.PcbDoc
+Configuration8_Item2=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|GenerateSeparateViaTypeFiles=False|GenerateToolsByDrillSymbols=False|NumberOfDecimals=4|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Imperial|ZeroesMode=SuppressLeadingZeroes|DocumentPath=D:\5_GitSTUFF\0003_LART\2023_2024\00_Voltage_Indicator\T24_VoltageIndicator_Hardware\VoltageIndicator_V4.PcbDoc
 OutputType9=IPC2581
 OutputName9=IPC-2581 Files
 OutputDocumentPath9=
@@ -1286,7 +1408,7 @@ OutputDefault12=0
 Configuration12_Name1=ForceUpdateSettings
 Configuration12_Item1=False
 Configuration12_Name2=OutputConfigurationParameter1
-Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|BoardID=MOWXTTQN|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=500000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GenerateReports=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=True|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MergePadAndRegion=False|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|OutputFormat=Different|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16777217~1,16842751~1,16973830~1,16973834~1,16973835~1,16973832~1,16908289~1,16908301~1,16908303~1,16973837~1,16973848~1,16973849~1,16973831~1|PlotBoardProfile=True|PlotBoardProfileFileName= |PlotDrillDrawingLayerPair0_Backdrill=False|PlotDrillDrawingLayerPair0_Checked=True|PlotDrillDrawingLayerPair0_DrillType=Regular|PlotDrillDrawingLayerPair0_FileName= |PlotDrillDrawingLayerPair0_HighLayer=Bottom Layer|PlotDrillDrawingLayerPair0_LowLayer=Top Layer|PlotDrillGuideLayerPair0_Backdrill=False|PlotDrillGuideLayerPair0_Checked=True|PlotDrillGuideLayerPair0_DrillType=Regular|PlotDrillGuideLayerPair0_FileName= |PlotDrillGuideLayerPair0_HighLayer=Bottom Layer|PlotDrillGuideLayerPair0_LowLayer=Top Layer|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=True|Sorted=False|Sorted=False|DocumentPath=D:\5_GitSTUFF\0003_LART\2023_2024\00_Voltage_Indicator\T24_VoltageIndicator_Hardware\VoltageIndicator_V3.PcbDoc
+Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|BoardID=FGJSYWUL|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=500000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GenerateReports=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=True|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MergePadAndRegion=False|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|OutputFormat=Different|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16777217~1,16842751~1,16973830~1,16973834~1,16973835~1,16973832~1,16908289~1,16908301~1,16908303~1,16973837~1,16973848~1,16973849~1,16973831~1|PlotBoardProfile=True|PlotBoardProfileFileName= |PlotDrillDrawingLayerPair0_Backdrill=False|PlotDrillDrawingLayerPair0_Checked=True|PlotDrillDrawingLayerPair0_DrillType=Regular|PlotDrillDrawingLayerPair0_FileName= |PlotDrillDrawingLayerPair0_HighLayer=Bottom Layer|PlotDrillDrawingLayerPair0_LowLayer=Top Layer|PlotDrillGuideLayerPair0_Backdrill=False|PlotDrillGuideLayerPair0_Checked=True|PlotDrillGuideLayerPair0_DrillType=Regular|PlotDrillGuideLayerPair0_FileName= |PlotDrillGuideLayerPair0_HighLayer=Bottom Layer|PlotDrillGuideLayerPair0_LowLayer=Top Layer|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=True|Sorted=False|Sorted=False|DocumentPath=D:\5_GitSTUFF\0003_LART\2023_2024\00_Voltage_Indicator\T24_VoltageIndicator_Hardware\VoltageIndicator_V4.PcbDoc
 
 [OutputGroup6]
 Name=Report Outputs

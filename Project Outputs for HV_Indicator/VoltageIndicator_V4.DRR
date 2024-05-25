@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: VoltageIndicator_V4.PcbDoc   25/05/2024  18:51:25
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : VoltageIndicator_V4.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             2         PTH        0.35inch (9.00mm)
+T2      20mil (0.5mm)                                             Round             16        PTH        4.32inch (109.73mm)
+T3      28mil (0.711mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T4      39mil (0.991mm)                                           Round             5         PTH        1.25inch (31.84mm)
+T5      79mil (1.999mm)                                           Round             2         PTH        0.56inch (14.35mm)
+T6      110mil (2.799mm)                                          Round             6         PTH        1.38inch (35.00mm)
+T7      138mil (3.5mm)                                            Round             4         PTH        8.58inch (218.00mm)
+T8      118mil (3mm)                                              Round             2         NPTH       1.24inch (31.46mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              38
+
+Total Processing Time (hh:mm:ss) : 00:00:00
