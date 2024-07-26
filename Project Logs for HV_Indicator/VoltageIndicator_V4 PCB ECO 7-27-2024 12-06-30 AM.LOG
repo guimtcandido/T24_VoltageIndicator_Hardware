@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=GND Pin=-P1_1
+Removed Pin From Net: NetName=GND Pin=-P1_2
+Removed Pin From Net: NetName=NetC2_2 Pin=-P2_1
+Removed Pin From Net: NetName=NetC2_2 Pin=-P2_2
+Added Component: Designator=J1(11781382)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "1-178138-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/1-178138-2/te-connectivity?region=europe"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F178138%7FE1%7Fpdf%7FEnglish%7FENG_CD_178138_E1.pdf%7F1-178138-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "11.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "1-178138-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "571-1-178138-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/TE-Connectivity/1-178138-2?qs=CUq%2FfiVWgpCdbQR47qZ9jg%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=NetC2_2 Pin=J1-2
+Added Pin To Net: NetName=NetJ1_3 Pin=J1-3
+Added Pin To Net: NetName=NetJ1_3 Pin=R19-2
+Added Net: Name=NetJ1_3
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Buck Member=Component * M3 Mounting Hole
+Added Member To Class: ClassName=Connectors Member=Component J1 1-178138-2
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
